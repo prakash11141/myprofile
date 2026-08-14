@@ -31,8 +31,8 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 5%;
-  background: linear-gradient(90deg, #111827, #4f46e5);
+  padding: 1px 5%;
+  background: linear-gradient(90deg, #f0f1f3, #5ce4f0);
 }
 
 nav ul {
@@ -46,7 +46,7 @@ nav ul li {
 }
 
 nav ul li a {
-  color: white;
+  color: rgb(0, 0, 2);
   text-decoration: none;
   font-size: 17px;
   font-weight: 500;
