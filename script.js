@@ -82,3 +82,67 @@ if (form) {
     }
   });
 }
+// ====================
+// GSAP - Services Animation
+// ====================
+// ====================
+// GSAP - Services Animation
+// ====================
+
+gsap.registerPlugin(ScrollTrigger);
+
+const servicesSection = document.querySelector("#services");
+const servicesTitle = document.querySelector("#services .sub-title");
+const serviceCards = document.querySelectorAll(
+  "#services .services-list > div",
+);
+
+if (servicesSection && servicesTitle && serviceCards.length) {
+  // =========================
+  // My Services Title
+  // Comes from above
+  // =========================
+  gsap.from(servicesTitle, {
+    scrollTrigger: {
+      trigger: servicesSection,
+      start: "top 100%",
+      toggleActions: "play none none reverse",
+    },
+    y: -120,
+    opacity: 0,
+    duration: 2,
+    ease: "power4.out",
+  });
+
+  // =========================
+  // Service Cards
+  // Come from the sides
+  // =========================
+
+  serviceCards.forEach((card, index) => {
+    let animation = {
+      opacity: 0,
+      duration: 1.2,
+      delay: index * 0.15,
+      ease: "power4.out",
+      scrollTrigger: {
+        trigger: servicesSection,
+        start: "top 70%",
+        toggleActions: "play none none reverse",
+      },
+    };
+
+    if (index === 0) {
+      // Card 1 → from left
+      animation.x = -100;
+    } else if (index === 1) {
+      // Card 2 → from bottom
+      animation.y = 100;
+    } else if (index === 2) {
+      // Card 3 → from right
+      animation.x = 100;
+    }
+
+    gsap.from(card, animation);
+  });
+}
