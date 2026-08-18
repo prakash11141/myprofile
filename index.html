@@ -10,6 +10,7 @@
       crossorigin="anonymous"
     ></script>
   </head>
+
   <body>
     <div id="header">
       <nav>
@@ -60,13 +61,18 @@
               applications across professional, academic, and personal projects.
             </p>
             <div class="tab-titles">
-              <p class="tab-links active-link" onclick="opentab('skills')">
+              <p
+                class="tab-links active-link"
+                onclick="opentab('skills', event)"
+              >
                 Skills
               </p>
-              <p class="tab-links" onclick="opentab('experience')">
+              <p class="tab-links" onclick="opentab('experience', event)">
                 Experience
               </p>
-              <p class="tab-links" onclick="opentab('education')">Education</p>
+              <p class="tab-links" onclick="opentab('education', event)">
+                Education
+              </p>
             </div>
             <div class="tab-contents active-tab" id="skills">
               <ul>
@@ -368,60 +374,6 @@
         <p>© 2026 Prakash Shrestha. All rights reserved.</p>
       </div>
     </div>
-
-    <script>
-      var tablinks = document.getElementsByClassName("tab-links");
-      var tabcontents = document.getElementsByClassName("tab-contents");
-      function opentab(tabname) {
-        for (tablink of tablinks) {
-          tablink.classList.remove("active-link");
-        }
-        for (tabcontent of tabcontents) {
-          tabcontent.classList.remove("active-tab");
-        }
-        event.currentTarget.classList.add("active-link");
-        document.getElementById(tabname).classList.add("active-tab");
-      }
-    </script>
-    <script>
-      const sidemenu = document.getElementById("sidemenu");
-
-      function openmenu() {
-        sidemenu.classList.add("open");
-      }
-
-      function closemenu() {
-        sidemenu.classList.remove("open");
-      }
-    </script>
-    <script>
-      const scriptURL =
-        "https://script.google.com/macros/s/AKfycbxIKYCbt5DCaufhF5YOKNjb8MXrZtMQdHley2UQnnaKBSb2JFdJ0MwqW0Nh7_rEw_KwCw/exec";
-      const form = document.forms["submit-to-google-sheet"];
-      const msg = document.getElementById("msg");
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        fetch(scriptURL, { method: "POST", body: new FormData(form) })
-          .then((response) => {
-            msg.innerHTML = "Message sent successfully";
-            setTimeout(function () {
-              msg.innerHTML = "";
-            }, 3000);
-            form.reset();
-          })
-          .catch((error) => console.error("Error!", error.message));
-      });
-    </script>
-    <script>
-      const nav = document.querySelector("nav");
-
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 50) {
-          nav.classList.add("scrolled");
-        } else {
-          nav.classList.remove("scrolled");
-        }
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
