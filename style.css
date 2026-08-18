@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: "Bricolage Grotesque", sans-serif;
   box-sizing: border-box;
 }
 html {
@@ -11,6 +11,7 @@ body {
   background: #080808;
   color: #fff;
 }
+
 #header {
   width: 100%;
   min-height: 100vh;
