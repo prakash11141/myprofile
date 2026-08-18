@@ -146,3 +146,52 @@ if (servicesSection && servicesTitle && serviceCards.length) {
     gsap.from(card, animation);
   });
 }
+// =========================
+// Typing Animation
+// =========================
+
+const typingText = document.getElementById("typing-text");
+
+const text = "Computer Engineer.";
+
+let index = 0;
+let isDeleting = false;
+
+function typeEffect() {
+  if (!typingText) return;
+
+  if (!isDeleting) {
+    // Typing
+    typingText.textContent = text.substring(0, index + 1);
+    index++;
+
+    // Finished typing
+    if (index === text.length) {
+      setTimeout(() => {
+        isDeleting = true;
+        typeEffect();
+      }, 1500);
+
+      return;
+    }
+
+    setTimeout(typeEffect, 120);
+  } else {
+    // Deleting
+    typingText.textContent = text.substring(0, index - 1);
+    index--;
+
+    // Finished deleting
+    if (index === 0) {
+      isDeleting = false;
+
+      setTimeout(typeEffect, 500);
+
+      return;
+    }
+
+    setTimeout(typeEffect, 70);
+  }
+}
+
+typeEffect();

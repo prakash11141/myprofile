@@ -88,17 +88,23 @@ nav ul li a:hover {
   font-size: 30px;
 }
 .header-text h1 {
-  font-size: 60px;
-  margin-top: 20px;
-  color: orange;
+  height: 1.2em;
+  margin-bottom: 10px;
 }
-.header-text h1 span {
-  color: orange;
+
+#typing-text {
+  display: inline-block;
+  border-right: 3px solid #ff004f;
+  padding-right: 5px;
+  animation: cursorBlink 0.7s infinite;
 }
+/* .header-text h1 span {
+  color: orange;
+} */
 .header-text p {
   font-size: 36px;
   margin: 10px 0 0;
-  color: blue;
+  color: rgb(255, 255, 255);
 }
 /* about */
 #about {
@@ -124,6 +130,9 @@ nav ul li a:hover {
   font-size: 60px;
   font-weight: 600;
   color: #ff8f00;
+}
+.sub-title:hover {
+  color: #fff;
 }
 .tab-titles {
   display: flex;
@@ -156,6 +165,9 @@ nav ul li a:hover {
 .tab-contents ul li span {
   color: orange;
   font-size: 14px;
+}
+.tab-contents ul li span:hover {
+  color: rgb(238, 238, 238);
 }
 .tab-contents {
   display: none;
