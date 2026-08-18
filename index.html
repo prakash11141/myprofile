@@ -21,15 +21,21 @@
           <li><a href="#services">Services</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#contact">Contact</a></li>
-          <i class="fas fa-regular fa-circle-xmark" onclick="closemenu()"></i>
+
+          <!-- Close icon -->
+          <li class="close-menu" onclick="closemenu()">
+            <i class="fas fa-times"></i>
+          </li>
         </ul>
 
-        <i class="fas fa-solid fa-bars" onclick="openmenu()"></i>
+        <!-- Menu icon -->
+        <i class="fas fa-bars menu-icon" onclick="openmenu()"></i>
       </nav>
 
       <div class="container">
-        <div class="header-text">
-          <!-- your heading/content -->
+        <div class="header-text h1">
+          <h1>Computer Engineer</h1>
+          <p>I am Prakash Shrestha a software engineer.</p>
         </div>
       </div>
     </div>
@@ -257,12 +263,14 @@
       }
     </script>
     <script>
-      var sidemenu = document.getElementById("sidemenu");
+      const sidemenu = document.getElementById("sidemenu");
+
       function openmenu() {
-        sidemenu.style.right = "0";
+        sidemenu.classList.add("open");
       }
+
       function closemenu() {
-        sidemenu.style.right = "-200px";
+        sidemenu.classList.remove("open");
       }
     </script>
     <script>
