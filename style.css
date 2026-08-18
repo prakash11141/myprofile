@@ -17,7 +17,7 @@ body {
   background-image: url(images/prakash.png);
   background-size: cover;
   background-position: center;
-  background-color: #080808;
+  padding-top: 80px;
 }
 .container {
   padding: 10px 10%;
@@ -30,20 +30,38 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
-
   z-index: 1000;
 
-  padding: 10px 10%;
-  background: rgba(8, 8, 8, 0.95);
-  backdrop-filter: blur(10px);
   width: 100%;
+  padding: 8px 5%;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1px 5%;
-  background: linear-gradient(90deg, #f0f1f3, #5ce4f0);
+
+  background: linear-gradient(
+    90deg,
+    rgba(240, 241, 243, 0.9),
+    rgba(92, 228, 240, 0.9)
+  );
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  transition: all 0.4s ease;
 }
 
+/* More transparent when scrolling */
+nav.scrolled {
+  background: linear-gradient(
+    90deg,
+    rgba(240, 241, 243, 0.6),
+    rgba(92, 228, 240, 0.6)
+  );
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
 nav ul {
   display: flex;
   align-items: center;
